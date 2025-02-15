@@ -1,5 +1,6 @@
 const express = require('express');
-const {validateUser} = require('./middlewares/index')
+const {validateUser} = require('./middlewares/index');
+const UserController = require('./controllers/UserController')
 const app = express();
 
 const bodyParser = express.json() // request.body
@@ -7,7 +8,7 @@ const bodyParser = express.json() // request.body
 
 const PORT = 5000;
 
-app.post('/user',bodyParser,validateUser())
+app.post('/user',bodyParser,validateUser(),UserController.registerUser)
 
 app.listen(PORT,()=>{
     console.log(`Servet start on port ${PORT}`);

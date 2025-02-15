@@ -1,10 +1,11 @@
-const {registrayionUserSchema} = require('../schemas/userSchema')
+const { registrationUserSchema } = require('../schemas/userSchema');
 
-module.exports.validateUser = async (req,res,next)=>{
-    try{
-        const value = await registrayionUserSchema.validate(req.body);
+module.exports.validateUser = async (req, res, next) => {
+    try {
+        await registrationUserSchema.validate(req.body);
+        
         return next();
-    } catch(error){
-        next(error.message)
+    } catch (error) {
+        res.status(400).send(error.message);
     }
 }
