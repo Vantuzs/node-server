@@ -17,7 +17,7 @@ app.listen(PORT,()=>{
     console.log(`Servet start on port ${PORT}`);
 })
 //Роут на получение какогото конкретного юзера
-app.get('/user',UserController.getOneUser);
+app.get('/user/:userId',UserController.getOneUser);
 
 // маршрут + метод = роут
 

@@ -19,5 +19,12 @@ module.exports.getAllUsers = (req,res,next)=>{
 
 //метод контролера на получение конкретного пользователя
 module.exports.getOneUser = (req,res,next)=>{
-    console.log(req.query);
+    const { userId } = req.params;
+    const user = User.findOne(Number(userId));
+
+    if(user){ // если юзер сюществует, тоесть если он не undefined
+        res.status(200).send(user)
+    }else {
+        res.status(404).send('QWAqwaQwaaaaaa')
+    }
 }
