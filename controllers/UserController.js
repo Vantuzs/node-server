@@ -31,10 +31,11 @@ module.exports.getOneUser = (req,res,next)=>{
 
 module.exports.deleteOneUser = (req,res,next)=>{
     const { userId } = req.params;
+    const objDeletedUser = User.findOne(Number(userId))
     const user = User.deleteUser(Number(userId))
     
     if(user){
-        res.status(200).send(`${user} deleted`)
+        res.status(200).send(objDeletedUser);
     } else{
         res.status(404).send('User not found =(')
     }
