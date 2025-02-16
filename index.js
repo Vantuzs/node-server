@@ -8,7 +8,10 @@ const bodyParser = express.json() // request.body
 
 const PORT = 5000;
 
-app.post('/user',bodyParser,validateUser,UserController.registerUser)
+app.post('/user',bodyParser,validateUser,UserController.registerUser);
+
+// Роут на получение всех пользователей 
+app.get('/users',UserController.getAllUsers); // http://localhost:5000/users
 
 app.listen(PORT,()=>{
     console.log(`Servet start on port ${PORT}`);
