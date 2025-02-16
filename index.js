@@ -22,6 +22,9 @@ app.get('/user/:userId',UserController.getOneUser);
 //Роут на удаление юзера
 app.delete('/user/:userId',UserController.deleteOneUser)
 
+//роут на обновление конереьного пользователя
+app.put('/user/:userId',bodyParser,UserController.updateUser)
+
 // маршрут + метод = роут
 
 /* 
