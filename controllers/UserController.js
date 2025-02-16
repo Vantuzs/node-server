@@ -28,3 +28,14 @@ module.exports.getOneUser = (req,res,next)=>{
         res.status(404).send('QWAqwaQwaaaaaa')
     }
 }
+
+module.exports.deleteOneUser = (req,res,next)=>{
+    const { userId } = req.params;
+    const user = User.deleteUser(Number(userId))
+    
+    if(user){
+        res.status(200).send(`${user} deleted`)
+    } else{
+        res.status(404).send('User not found =(')
+    }
+}

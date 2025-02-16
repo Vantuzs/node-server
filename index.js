@@ -19,6 +19,9 @@ app.listen(PORT,()=>{
 //Роут на получение какогото конкретного юзера
 app.get('/user/:userId',UserController.getOneUser);
 
+//Роут на удаление юзера
+app.delete('/user/:userId',UserController.deleteOneUser)
+
 // маршрут + метод = роут
 
 /* 

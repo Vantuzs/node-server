@@ -23,8 +23,8 @@ class User {
         return [...db.values()];
     }
 
-    deleteUser() {
-        return db.delete(this.id);
+     static deleteUser(userId) {
+        return db.delete(userId);
     }
 }
 
