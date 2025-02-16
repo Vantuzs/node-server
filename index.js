@@ -16,6 +16,8 @@ app.get('/users',UserController.getAllUsers); // http://localhost:5000/users
 app.listen(PORT,()=>{
     console.log(`Servet start on port ${PORT}`);
 })
+//Роут на получение какогото конкретного юзера
+app.get('/user',UserController.getOneUser);
 
 // маршрут + метод = роут
 
